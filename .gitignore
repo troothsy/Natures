@@ -1,0 +1,8 @@
+# Ignore Sass source files
+# scss
+
+# Ignore watch script
+watch-sass.js
+
+# Ignore CSS source maps
+*.css.map
