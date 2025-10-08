@@ -1,0 +1,8 @@
+// ? Clear fix hack
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

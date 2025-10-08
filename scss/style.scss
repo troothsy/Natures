@@ -1,5 +1,5 @@
 // ? abstract folder
-@import "abstracts/functionss";
+@import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
@@ -11,9 +11,11 @@
 
 // ? components
 @import "components/button";
+@import "components/composition";
 
 // ? layout folder
 @import "layout/_header.scss";
+@import "layout/grid";
 
 // ?  pages folder
 @import "pages/home";
