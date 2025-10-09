@@ -4,8 +4,14 @@ $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-grey-dark: #777;
 $color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
 $color-black: #000;
 $color-white: #ffffff;
+
+// ? card colors
+$card-one-color: linear-gradient(to left top, #f12711, #f5af19);
+$card-two-color: linear-gradient(to left top, #11998e, #38ef7d);
+$card-three-color: linear-gradient(to left top, #5643fa, #2998ff);
 
 // ? Font Size
 $default-font-size: 1.125rem;

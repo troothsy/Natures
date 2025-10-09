@@ -1,0 +1,142 @@
+.card {
+  // ? functionality
+  perspective: 93.75rem;
+  position: relative;
+  height: 32.5rem;
+
+  &__side {
+    color: white;
+    font-size: 2rem;
+    height: 32.5rem;
+    transition: all 0.7s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0.9375rem 1.875rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background: $card-one-color;
+      }
+      &-2 {
+        background: $card-two-color;
+      }
+      &-3 {
+        background: $card-three-color;
+      }
+    }
+  }
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+  // ?front-side styling
+  &__picture {
+    background-size: cover;
+    height: 14rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+
+    &--1 {
+      background-image: $card-one-color, url(../../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: $card-two-color, url(../../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: $card-three-color, url(../../img/nat-7.jpg);
+    }
+  }
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 7.5rem;
+    right: 1.25rem;
+    width: 74%;
+  }
+
+  &__heading-span {
+    padding: 0.625rem 1rem;
+    box-decoration-break: clone;
+    text-align: right;
+    &--1 {
+      background: linear-gradient(
+        to left top,
+        rgba(241, 39, 17, 0.85),
+        rgba(245, 175, 25, 0.85)
+      );
+    }
+    &--2 {
+      background: linear-gradient(
+        to left top,
+        rgb(17, 153, 142, 0.85),
+        rgb(56, 239, 125, 0.85)
+      );
+    }
+    &--3 {
+      background: linear-gradient(
+        to left top,
+        rgb(86, 67, 250, 0.85),
+        rgb(41, 152, 255, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      color: $color-grey-dark;
+
+      li {
+        text-align: center;
+        font-size: 0.9375rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+        padding: 0.625rem;
+      }
+    }
+  }
+
+  // ? back side styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  &__price-only {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 3.75rem;
+    font-weight: 100;
+  }
+}

@@ -119,6 +119,14 @@ body {
   margin-bottom: 0.9375rem;
 }
 
+.u-margin-top-big {
+  margin-top: 5rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 6.25rem;
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -144,6 +152,17 @@ body {
   background-color: #ffffff;
   color: #777;
 }
+.btn--white::after {
+  background-color: #ffffff;
+}
+
+.btn--green {
+  background-color: #55c57a;
+  color: #ffffff;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
 
 .btn::after {
   content: "";
@@ -156,10 +175,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-}
-
-.btn--white::after {
-  background-color: #ffffff;
 }
 
 .btn:hover::after {
@@ -245,12 +260,133 @@ body {
   transform: translateY(-24px) scale(1.03);
 }
 
+.card {
+  perspective: 93.75rem;
+  position: relative;
+  height: 32.5rem;
+}
+.card__side {
+  color: white;
+  font-size: 2rem;
+  height: 32.5rem;
+  transition: all 0.7s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.15);
+}
+.card__side--front {
+  background-color: #ffffff;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+}
+.card__side--back-1 {
+  background: linear-gradient(to left top, #f12711, #f5af19);
+}
+.card__side--back-2 {
+  background: linear-gradient(to left top, #11998e, #38ef7d);
+}
+.card__side--back-3 {
+  background: linear-gradient(to left top, #5643fa, #2998ff);
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+.card__picture {
+  background-size: cover;
+  height: 14rem;
+  background-blend-mode: screen;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+.card__picture--1 {
+  background-image: linear-gradient(to left top, #f12711, #f5af19), url(../../img/nat-5.jpg);
+}
+.card__picture--2 {
+  background-image: linear-gradient(to left top, #11998e, #38ef7d), url(../../img/nat-6.jpg);
+}
+.card__picture--3 {
+  background-image: linear-gradient(to left top, #5643fa, #2998ff), url(../../img/nat-7.jpg);
+}
+.card__heading {
+  font-size: 1.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #ffffff;
+  position: absolute;
+  top: 7.5rem;
+  right: 1.25rem;
+  width: 74%;
+}
+.card__heading-span {
+  padding: 0.625rem 1rem;
+  box-decoration-break: clone;
+  text-align: right;
+}
+.card__heading-span--1 {
+  background: linear-gradient(to left top, rgba(241, 39, 17, 0.85), rgba(245, 175, 25, 0.85));
+}
+.card__heading-span--2 {
+  background: linear-gradient(to left top, rgba(17, 153, 142, 0.85), rgba(56, 239, 125, 0.85));
+}
+.card__heading-span--3 {
+  background: linear-gradient(to left top, rgba(86, 67, 250, 0.85), rgba(41, 152, 255, 0.85));
+}
+.card__details {
+  padding: 3rem;
+}
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  color: #777;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: 0.9375rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.card__details ul li {
+  padding: 0.625rem;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  font-size: 1rem;
+  text-align: center;
+}
+.card__price-box {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.card__price-only {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 3.75rem;
+  font-weight: 100;
+}
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to left bottom, rgba(17, 153, 142, 0.7), rgba(56, 239, 126, 0.7)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
   position: relative;
 }
 .header__logo-box {
@@ -321,6 +457,12 @@ body {
 }
 .section-features > * {
   transform: skewY(7deg);
+}
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 15rem 0 9.375rem 0;
+  margin-top: -21vh;
 }
 
 /*# sourceMappingURL=style.css.map */
